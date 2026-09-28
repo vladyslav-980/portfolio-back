@@ -40,9 +40,9 @@ export async function sendContactEmails({ name, email, message }) {
     sender,
     to: [{ email, name }],
     replyTo: { email: env.contactTo, name: env.brevoSenderName },
-    subject: "Thanks for reaching out!",
-    textContent: `Hi, ${name}!\n\nThanks for reaching out! I've received your message and will get back to you soon.\n\nBest regards,\nVladyslav Huminiuk`,
-    htmlContent: `<img src="https://portfolio-front-dun-nine.vercel.app/images/email-confirmation.png" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" alt="Thanks for reaching out! I've received your message and will get back to you soon."><p>Hi, ${escapeHtml(name)}!</p><p>Thanks for reaching out! I've received your message and will get back to you soon.</p><p>Best regards,<br>Vladyslav Huminiuk</p>`,
+    subject: "Thank you for contacting me",
+    textContent: `Hello, ${name},\n\nThank you for getting in touch. I have received your message and appreciate your interest in working with me.\n\nI will review the details and respond as soon as possible.\n\nBest regards,\nVladyslav Huminiuk`,
+    htmlContent: `<img src="https://portfolio-front-dun-nine.vercel.app/images/email-confirmation.png" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" alt="Thank you for contacting me. Your message has been received, and I will respond as soon as possible."><p>Hello, ${escapeHtml(name)},</p><p>Thank you for getting in touch. I have received your message and appreciate your interest in working with me.</p><p>I will review the details and respond as soon as possible.</p><p>Best regards,<br>Vladyslav Huminiuk</p>`,
   });
 
   return Promise.allSettled([ownerEmail, confirmationEmail]);
