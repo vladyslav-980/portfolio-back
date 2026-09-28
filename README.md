@@ -7,7 +7,7 @@ REST API for the portfolio: MongoDB projects, search and filters, protected proj
 - Node.js + Express
 - MongoDB Atlas + Mongoose
 - Zod validation
-- Nodemailer with Gmail SMTP
+- Brevo Transactional Email API over HTTPS
 - Helmet, CORS and request rate limiting
 
 ## Local setup
@@ -17,7 +17,7 @@ REST API for the portfolio: MongoDB projects, search and filters, protected proj
 3. Copy `.env.example` to `.env`.
 4. Insert your MongoDB Atlas connection string into `MONGODB_URI`.
 5. Generate a long admin secret with `openssl rand -hex 32` and use it as `ADMIN_API_KEY`.
-6. Add a Gmail App Password to `SMTP_PASS`. Never use your regular Gmail password.
+6. Add a Brevo API key to `BREVO_API_KEY` and configure a verified sender.
 7. Run `npm run dev`.
 
 The API starts at `http://localhost:4000`.
@@ -29,11 +29,9 @@ PORT=4000
 FRONTEND_URL=http://localhost:3000
 MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@CLUSTER.mongodb.net/portfolio?retryWrites=true&w=majority
 ADMIN_API_KEY=replace_with_a_long_random_secret
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_SECURE=true
-SMTP_USER=vldgum@gmail.com
-SMTP_PASS=your_gmail_app_password
+BREVO_API_KEY=your_brevo_api_key
+BREVO_SENDER_EMAIL=vldgum@gmail.com
+BREVO_SENDER_NAME=Vladyslav Huminiuk
 CONTACT_TO=vldgum@gmail.com
 ```
 

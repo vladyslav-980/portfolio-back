@@ -5,11 +5,9 @@ export const env = {
   frontendUrl: process.env.FRONTEND_URL || "http://localhost:3000",
   mongodbUri: process.env.MONGODB_URI,
   adminApiKey: process.env.ADMIN_API_KEY,
-  smtpHost: process.env.SMTP_HOST,
-  smtpPort: Number(process.env.SMTP_PORT) || 465,
-  smtpSecure: process.env.SMTP_SECURE !== "false",
-  smtpUser: process.env.SMTP_USER,
-  smtpPass: process.env.SMTP_PASS,
+  brevoApiKey: process.env.BREVO_API_KEY,
+  brevoSenderEmail: process.env.BREVO_SENDER_EMAIL || "vldgum@gmail.com",
+  brevoSenderName: process.env.BREVO_SENDER_NAME || "Vladyslav Huminiuk",
   contactTo: process.env.CONTACT_TO || "vldgum@gmail.com",
 };
 
