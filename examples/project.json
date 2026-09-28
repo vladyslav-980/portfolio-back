@@ -1,0 +1,19 @@
+{
+  "slug": "savmed-clinic",
+  "title": {
+    "uk": "Клініка SavMed",
+    "en": "SavMed Clinic"
+  },
+  "description": {
+    "uk": "Тримовний сайт медичної клініки із записом на консультацію.",
+    "en": "A multilingual medical clinic website with appointment booking."
+  },
+  "type": "commercial",
+  "stack": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
+  "imageUrl": "",
+  "liveUrl": "https://savmed.net",
+  "githubUrl": "",
+  "featured": true,
+  "published": true,
+  "sortOrder": 1
+}
