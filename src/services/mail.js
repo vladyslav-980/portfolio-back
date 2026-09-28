@@ -25,7 +25,7 @@ async function sendBrevoEmail(payload) {
   return response.json();
 }
 
-export async function sendContactEmails({ name, email, message, language = "uk" }) {
+export async function sendContactEmails({ name, email, message }) {
   const sender = { email: env.brevoSenderEmail, name: env.brevoSenderName };
   const ownerEmail = sendBrevoEmail({
     sender,
@@ -36,18 +36,13 @@ export async function sendContactEmails({ name, email, message, language = "uk" 
     htmlContent: `<h2>New portfolio message</h2><p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><hr><p>${escapeHtml(message).replaceAll("\n", "<br>")}</p>`,
   });
 
-  const isUkrainian = language === "uk";
   const confirmationEmail = sendBrevoEmail({
     sender,
     to: [{ email, name }],
     replyTo: { email: env.contactTo, name: env.brevoSenderName },
-    subject: isUkrainian ? "Ваше повідомлення отримано" : "Your message has been received",
-    textContent: isUkrainian
-      ? `Вітаю, ${name}!\n\nДякую за повідомлення. Я отримав ваш запит і відповім найближчим часом.\n\nЗ повагою,\nВладислав Гумінюк`
-      : `Hi ${name},\n\nThank you for your message. I have received your request and will reply as soon as possible.\n\nBest regards,\nVladyslav Huminiuk`,
-    htmlContent: isUkrainian
-      ? `<h2>Дякую за повідомлення!</h2><p>Вітаю, ${escapeHtml(name)}!</p><p>Я отримав ваш запит і відповім найближчим часом.</p><p>З повагою,<br>Владислав Гумінюк</p>`
-      : `<h2>Thank you for your message!</h2><p>Hi ${escapeHtml(name)},</p><p>I have received your request and will reply as soon as possible.</p><p>Best regards,<br>Vladyslav Huminiuk</p>`,
+    subject: "Thanks for reaching out!",
+    textContent: `Hi, ${name}!\n\nThanks for reaching out! I've received your message and will get back to you soon.\n\nBest regards,\nVladyslav Huminiuk`,
+    htmlContent: `<img src="https://portfolio-front-dun-nine.vercel.app/images/email-confirmation.png" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0;" alt="Thanks for reaching out! I've received your message and will get back to you soon."><p>Hi, ${escapeHtml(name)}!</p><p>Thanks for reaching out! I've received your message and will get back to you soon.</p><p>Best regards,<br>Vladyslav Huminiuk</p>`,
   });
 
   return Promise.allSettled([ownerEmail, confirmationEmail]);
