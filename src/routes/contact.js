@@ -22,6 +22,15 @@ router.post("/", limiter, async (req, res, next) => {
     if (result.data.company) return res.status(200).json({ message: "Message sent" });
     const contact = await ContactMessage.create(result.data);
     const [ownerResult, confirmationResult] = await sendContactEmails(result.data);
+
+    if (ownerResult.status === "rejected") {
+      console.error("Owner email failed:", ownerResult.reason);
+    }
+
+    if (confirmationResult.status === "rejected") {
+      console.error("Confirmation email failed:", confirmationResult.reason);
+    }
+
     const ownerEmailSent = ownerResult.status === "fulfilled";
     const confirmationEmailSent = confirmationResult.status === "fulfilled";
     const status = ownerEmailSent && confirmationEmailSent ? "sent" : ownerEmailSent || confirmationEmailSent ? "partially_sent" : "failed";
