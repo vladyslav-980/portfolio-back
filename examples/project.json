@@ -10,7 +10,7 @@
   },
   "type": "commercial",
   "stack": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
-  "imageUrl": "https://portfolio-back-kx4w.onrender.com/images/projects/savmed-clinic.png",
+  "imageUrl": "https://raw.githubusercontent.com/vladyslav-980/portfolio-back/main/public/images/projects/savmed-clinic.png",
   "liveUrl": "https://savmed-clinic.vercel.app/?lang=uk",
   "githubUrl": "",
   "featured": true,
