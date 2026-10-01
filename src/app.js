@@ -12,6 +12,9 @@ app.set("trust proxy", 1);
 app.use(helmet());
 app.use(cors({ origin: env.frontendUrl.split(",").map((url) => url.trim()), methods: ["GET", "POST", "PATCH", "DELETE"] }));
 app.use(express.json({ limit: "20kb" }));
+app.use("/images", express.static("public/images", {
+  setHeaders: (res) => res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"),
+}));
 
 app.get("/api/health", (_req, res) => res.json({ status: "ok" }));
 app.use("/api/contact", contactRouter);

@@ -5,13 +5,13 @@
     "en": "SavMed Clinic"
   },
   "description": {
-    "uk": "Тримовний сайт медичної клініки із записом на консультацію.",
-    "en": "A multilingual medical clinic website with appointment booking."
+    "uk": "Тримовний вебсайт клініки SavMed із сучасним адаптивним інтерфейсом, детальною інформацією про послуги, методи лікування, спеціалістів, медичні товари та контакти. Реалізовано зручну навігацію, локалізацію українською, російською та англійською мовами й оптимізоване відображення на різних пристроях.",
+    "en": "A multilingual website for SavMed Clinic featuring a modern responsive interface and detailed information about services, treatment methods, specialists, medical products, and contacts. It includes intuitive navigation, Ukrainian, Russian, and English localization, and an optimized experience across devices."
   },
   "type": "commercial",
   "stack": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
-  "imageUrl": "",
-  "liveUrl": "https://savmed.net",
+  "imageUrl": "https://portfolio-back-kx4w.onrender.com/images/projects/savmed-clinic.png",
+  "liveUrl": "https://savmed-clinic.vercel.app/?lang=uk",
   "githubUrl": "",
   "featured": true,
   "published": true,
