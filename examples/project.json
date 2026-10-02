@@ -5,14 +5,14 @@
     "en": "SavMed Clinic"
   },
   "description": {
-    "uk": "Тримовний вебсайт клініки SavMed із сучасним адаптивним інтерфейсом, детальною інформацією про послуги, методи лікування, спеціалістів, медичні товари та контакти. Реалізовано зручну навігацію, локалізацію українською, російською та англійською мовами й оптимізоване відображення на різних пристроях.",
-    "en": "A multilingual website for SavMed Clinic featuring a modern responsive interface and detailed information about services, treatment methods, specialists, medical products, and contacts. It includes intuitive navigation, Ukrainian, Russian, and English localization, and an optimized experience across devices."
+    "uk": "Сучасний адаптивний вебсайт медичної клініки SavMed, що спеціалізується на здоров’ї та лікуванні опорно-рухового апарату. Сайт представляє послуги й методи лікування, спеціалістів, сертифікати, медичні товари, контакти та розташування клініки. Реалізовано багатомовний інтерфейс, інтерактивні елементи, анімації, слайдери та адаптивну навігацію.",
+    "en": "A modern responsive website for SavMed, a medical clinic specializing in musculoskeletal health and treatment. It presents the clinic’s services, treatment methods, specialists, certificates, medical products, contacts, and location through a clear multilingual interface with interactive elements, animations, sliders, and responsive navigation."
   },
   "type": "commercial",
-  "stack": ["Next.js", "TypeScript", "Node.js", "Express", "MongoDB"],
+  "stack": ["React", "TypeScript", "Vite", "CSS", "Vercel"],
   "imageUrl": "https://raw.githubusercontent.com/vladyslav-980/portfolio-back/main/public/images/projects/savmed-clinic.png",
-  "liveUrl": "https://savmed-clinic.vercel.app/?lang=uk",
-  "githubUrl": "",
+  "liveUrl": "https://savmed-clinic.vercel.app/?lang=en",
+  "githubUrl": "https://github.com/vladyslav-980/savmed-clinic",
   "featured": true,
   "published": true,
   "sortOrder": 1
