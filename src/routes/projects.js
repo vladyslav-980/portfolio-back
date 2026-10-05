@@ -9,6 +9,19 @@ function escapeRegex(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function getProjectTypeFilter(type) {
+  const normalizedType = type.trim().toLowerCase();
+  const aliases = {
+    pet: ["pet", "pet project"],
+    "pet-project": ["pet", "pet project"],
+    petproject: ["pet", "pet project"],
+    "in-progress": ["in-progress", "in progress"],
+    "in progress": ["in-progress", "in progress"],
+  };
+
+  return aliases[normalizedType] ? { $in: aliases[normalizedType] } : type;
+}
+
 router.get("/", async (req, res, next) => {
   try {
     const parsed = projectQuerySchema.safeParse(req.query);
@@ -16,7 +29,7 @@ router.get("/", async (req, res, next) => {
 
     const { search, type, stack, featured, sort, order, page, limit } = parsed.data;
     const filter = { published: true };
-    if (type) filter.type = type;
+    if (type) filter.type = getProjectTypeFilter(type);
     if (stack) filter.stack = { $in: [new RegExp(`^${escapeRegex(stack)}$`, "i")] };
     if (featured !== undefined) filter.featured = featured === "true";
     if (search) {
